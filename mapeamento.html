@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeamento - VisãoEPI Pro</title>
+    <link rel="stylesheet" href="sistema_de_epis.css">
+    <script src="sistema_de_epis.js" defer></script>
+</head>
+<body data-page="mapping">
+    <aside id="sidebar">
+        <div class="sidebar-header">VisãoEPI Pro</div>
+        <ul class="nav-menu">
+            <li><a class="nav-item" data-page="dashboard" href="dashboard.html">Dashboard</a></li>
+            <li><a class="nav-item" data-page="mapping" href="mapeamento.html">Mapeamento</a></li>
+            <li><a class="nav-item" data-page="ppe-control" href="controle-de-epis.html">Controle de EPIs</a></li>
+            <li><a class="nav-item" data-page="inventory" href="inventario.html">Inventário (Logs)</a></li>
+            <li><a class="nav-item" data-page="settings" href="configuracao.html">Configurações</a></li>
+            <li><a class="nav-item logout" href="sistema_de_epis.html" onclick="logout(); return false;">Sair</a></li>
+        </ul>
+    </aside>
+
+    <main id="main-content">
+        <section class="page active">
+            <h1>Mapeamento dos Ambientes</h1>
+            <div class="mapping-layout">
+                <div class="card">
+                    <p class="text-muted">Visualização e gestão das áreas monitoradas na fábrica.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID Área</th>
+                                <th>Nome do Setor</th>
+                                <th>Câmeras Ativas</th>
+                                <th>Risco</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>#A1</td><td>Linha de Montagem 1</td><td>4</td><td>Alto</td></tr>
+                            <tr><td>#B2</td><td>Estoque Principal</td><td>2</td><td>Médio</td></tr>
+                            <tr><td>#C1</td><td>Área de Soldagem</td><td>3</td><td>Extremo</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card integration-panel">
+                    <h2>Integração com a Visão</h2>
+                    <p class="text-muted">Espaço reservado para conectar o fluxo de visão computacional vindo do backend Python.</p>
+
+                    <div class="vision-stage">
+                        <div class="vision-feed-placeholder">
+                            <strong>Feed da câmera</strong>
+                            <span>Conecte aqui a saída do script Python ou um stream HTTP/WebSocket.</span>
+                        </div>
+                    </div>
+
+                    <div class="integration-metrics">
+                        <div class="integration-metric">
+                            <span class="metric-label">Estado</span>
+                            <strong>Pronto para conectar</strong>
+                        </div>
+                        <div class="integration-metric">
+                            <span class="metric-label">Fonte</span>
+                            <strong>backend/test_camera.py</strong>
+                        </div>
+                    </div>
+
+                    <div class="integration-note">
+                        Área pensada para receber o vídeo da câmera, as bounding boxes do YOLO e os alertas em tempo real.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

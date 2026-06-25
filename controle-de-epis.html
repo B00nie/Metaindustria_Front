@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de EPIs - VisãoEPI Pro</title>
+    <link rel="stylesheet" href="sistema_de_epis.css">
+    <script src="sistema_de_epis.js" defer></script>
+</head>
+<body data-page="ppe-control">
+    <aside id="sidebar">
+        <div class="sidebar-header">VisãoEPI Pro</div>
+        <ul class="nav-menu">
+            <li><a class="nav-item" data-page="dashboard" href="dashboard.html">Dashboard</a></li>
+            <li><a class="nav-item" data-page="mapping" href="mapeamento.html">Mapeamento</a></li>
+            <li><a class="nav-item" data-page="ppe-control" href="controle-de-epis.html">Controle de EPIs</a></li>
+            <li><a class="nav-item" data-page="inventory" href="inventario.html">Inventário (Logs)</a></li>
+            <li><a class="nav-item" data-page="settings" href="configuracao.html">Configurações</a></li>
+            <li><a class="nav-item logout" href="sistema_de_epis.html" onclick="logout(); return false;">Sair</a></li>
+        </ul>
+    </aside>
+
+    <main id="main-content">
+        <section class="page active">
+            <h1>Painel de Controle de EPIs</h1>
+            <div class="card">
+                <p class="text-muted">Configure quais equipamentos devem ser identificados em cada setor do mapeamento.</p>
+
+                <div class="form-group" style="max-width: 300px; margin-top: 20px;">
+                    <label>Selecione o Setor:</label>
+                    <select>
+                        <option>Área de Soldagem</option>
+                        <option>Linha de Montagem 1</option>
+                    </select>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <label style="display: flex; gap: 10px; margin-bottom: 10px;">
+                        <input type="checkbox" checked> Capacete Obrigatório (Classe A)
+                    </label>
+                    <label style="display: flex; gap: 10px; margin-bottom: 10px;">
+                        <input type="checkbox" checked> Óculos de Proteção
+                    </label>
+                    <label style="display: flex; gap: 10px; margin-bottom: 10px;">
+                        <input type="checkbox"> Protetor Auricular
+                    </label>
+                    <label style="display: flex; gap: 10px; margin-bottom: 10px;">
+                        <input type="checkbox" checked> Máscara de Solda
+                    </label>
+                </div>
+
+                <button class="btn" style="margin-top: 15px;">Salvar Regras de Inferência</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

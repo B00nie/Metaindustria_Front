@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário - VisãoEPI Pro</title>
+    <link rel="stylesheet" href="sistema_de_epis.css">
+    <script src="sistema_de_epis.js" defer></script>
+</head>
+<body data-page="inventory">
+    <aside id="sidebar">
+        <div class="sidebar-header">VisãoEPI Pro</div>
+        <ul class="nav-menu">
+            <li><a class="nav-item" data-page="dashboard" href="dashboard.html">Dashboard</a></li>
+            <li><a class="nav-item" data-page="mapping" href="mapeamento.html">Mapeamento</a></li>
+            <li><a class="nav-item" data-page="ppe-control" href="controle-de-epis.html">Controle de EPIs</a></li>
+            <li><a class="nav-item" data-page="inventory" href="inventario.html">Inventário (Logs)</a></li>
+            <li><a class="nav-item" data-page="settings" href="configuracao.html">Configurações</a></li>
+            <li><a class="nav-item logout" href="sistema_de_epis.html" onclick="logout(); return false;">Sair</a></li>
+        </ul>
+    </aside>
+
+    <main id="main-content">
+        <section class="page active">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; gap: 16px; flex-wrap: wrap;">
+                <h1>Inventário de Registros</h1>
+                <button class="btn" onclick="openModal()">+ Novo Registro Manual</button>
+            </div>
+
+            <div class="card">
+                <p class="text-muted">Histórico completo de detecções e inspeções manuais registradas pelas câmeras e pela equipe.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data/Hora</th>
+                            <th>Trabalhador ID</th>
+                            <th>Setor</th>
+                            <th>Equipamento (Faltante/Irregular)</th>
+                            <th>Status da Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventory-table"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="inventory-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Criar Registro Manual</h2>
+            <p style="margin-bottom: 20px; color: var(--text-muted);">Insira um evento que não foi captado pelas câmeras.</p>
+
+            <form id="form-manual-entry" onsubmit="submitManualEntry(event)">
+                <div class="form-group">
+                    <label>ID do Trabalhador</label>
+                    <input type="text" required placeholder="Ex: MAT-9021">
+                </div>
+                <div class="form-group">
+                    <label>Setor</label>
+                    <select>
+                        <option>Linha de Montagem 1</option>
+                        <option>Estoque Principal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>EPI Irregular/Faltante</label>
+                    <input type="text" required placeholder="Ex: Luva de Raspa">
+                </div>
+                <div class="form-group">
+                    <label>Observações</label>
+                    <input type="text" placeholder="Detalhes do ocorrido">
+                </div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Salvar Registro no SQL</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - VisãoEPI Pro</title>
+    <link rel="stylesheet" href="sistema_de_epis.css">
+    <script src="sistema_de_epis.js" defer></script>
+</head>
+<body data-page="dashboard">
+    <aside id="sidebar">
+        <div class="sidebar-header">VisãoEPI Pro</div>
+        <ul class="nav-menu">
+            <li><a class="nav-item" data-page="dashboard" href="dashboard.html">Dashboard</a></li>
+            <li><a class="nav-item" data-page="mapping" href="mapeamento.html">Mapeamento</a></li>
+            <li><a class="nav-item" data-page="ppe-control" href="controle-de-epis.html">Controle de EPIs</a></li>
+            <li><a class="nav-item" data-page="inventory" href="inventario.html">Inventário (Logs)</a></li>
+            <li><a class="nav-item" data-page="settings" href="configuracao.html">Configurações</a></li>
+            <li><a class="nav-item logout" href="sistema_de_epis.html" onclick="logout(); return false;">Sair</a></li>
+        </ul>
+    </aside>
+
+    <main id="main-content">
+        <section class="page active">
+            <h1>Visão Geral do Turno</h1>
+            <div class="dash-grid">
+                <div class="card stat-card">
+                    <h3>Trabalhadores Ativos</h3>
+                    <div class="stat-number" id="dash-workers">--</div>
+                    <p class="text-muted">Detectados nas câmeras</p>
+                </div>
+                <div class="card stat-card">
+                    <h3>Conformidade EPI</h3>
+                    <div class="stat-number" id="dash-compliance" style="color: #28a745;">--%</div>
+                    <p class="text-muted">Uso correto validado</p>
+                </div>
+                <div class="card stat-card">
+                    <h3>Alertas (Hoje)</h3>
+                    <div class="stat-number" id="dash-alerts" style="color: #dc3545;">--</div>
+                    <p class="text-muted">Faltas de EPIs registradas</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Últimas Detecções (Tempo Real)</h2>
+                <p class="text-muted">Aqui entrará o stream de eventos do YOLOv8 processado pelo backend Python.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Câmera / Setor</th>
+                            <th>Status</th>
+                            <th>Detalhe</th>
+                        </tr>
+                    </thead>
+                    <tbody id="realtime-logs-table"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

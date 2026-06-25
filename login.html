@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Monitoramento de EPIs</title>
+    <link rel="stylesheet" href="sistema_de_epis.css">
+</head>
+<body data-page="login">
+    <main id="main-content">
+        <section id="page-login" class="page active">
+            <div class="card login-box">
+                <h2 style="color: var(--color-1);">VisãoEPI</h2>
+                <p style="margin-bottom: 20px; color: var(--text-muted);">Monitoramento inteligente de fábrica</p>
+
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label style="text-align: left;">Usuário</label>
+                        <input type="text" id="login-user" required placeholder="Digite seu usuário">
+                    </div>
+                    <div class="form-group">
+                        <label style="text-align: left;">Senha</label>
+                        <input type="password" id="login-pass" required placeholder="Digite sua senha">
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Entrar no Sistema</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="sistema_de_epis.js" defer></script>
+</body>
+</html>
